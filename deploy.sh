@@ -9,7 +9,7 @@ then
 fi
 
 commit_id=$(git show-ref --head | head -c6)
-git checkout -B gh-pages
+git checkout gh-pages
 git checkout master -- src
 
 mkdir $commit_id
