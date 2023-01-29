@@ -13,7 +13,7 @@ git checkout gh-pages
 git checkout master -- src
 
 mkdir $commit_id
-cp -r src $commit_id
+cp -r src/* $commit_id
 mv src/css css
 mv src/js js
 mv src/index.html index.html
