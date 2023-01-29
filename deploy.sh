@@ -12,8 +12,8 @@ commit_id=$(git show-ref --head | head -c6)
 git checkout gh-pages
 git checkout master -- src
 
-mkdir $commit_id
-cp -r src/* $commit_id
+mkdir -p hist/$commit_id
+cp -r src/* hist/$commit_id
 mv src/css css
 mv src/js js
 mv src/index.html index.html
@@ -23,7 +23,7 @@ touch .nojekyll
 date > version.txt
 
 git add -A .
-git commit -m "deploy"
+git commit -m "deploy $commit_id"
 git push -f origin gh-pages
 
 git checkout master
